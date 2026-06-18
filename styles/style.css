@@ -1,0 +1,900 @@
+/* ==========================================================================
+   1. IMPORTATIONS & POLICES PREMIUM (Google Fonts)
+   ========================================================================== */
+
+:root {
+    /* Charte graphique optimisée - Contraste Premium */
+    --color-primary: #FF7A00; 
+    --color-primary-hover: #E06B00;
+    --color-whatsapp: #25D366; 
+    --color-whatsapp-hover: #1ebd5a;
+    
+    --color-bg-white: #ffffff;
+    --color-bg-light: #ededed; 
+    --color-bg-dark: #1e2426; /* Gris encore plus profond pour le prestige */
+    
+    --color-text-main: #1a1a1a; /* Plus sombre pour une meilleure lisibilité */
+    --color-text-muted: #5e6e73;
+    
+    /* Typographies Luxe & Corp */
+    --font-title: 'Playfair Display', Georgia, serif;
+    --font-main: 'Montserrat', sans-serif;
+    
+    /* Transitions & Ombres haut de gamme */
+    --transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 20px 40px rgba(255, 122, 0, 0.12); /* Ombre portée subtilement teintée de orange */
+    --border-radius: 12px; /* Coins plus arrondis, style moderne/iOS */
+}
+
+/* ==========================================================================
+   2. RESET & BASES ANIMÉES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-white);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.fa_icon{
+    color: var(--color-primary);
+    
+}
+
+/* Pour les navigateurs modernes (Chrome, Safari, Edge, Opera) */
+::selection {
+    background-color: #ff7900;
+    color: #ffffff;       
+}
+
+/* Pour Firefox (sécurité et compatibilité) */
+::-moz-selection {
+    background-color: #ff7900;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHIE FINE & TITRES HAUT DE GAMME
+   ========================================================================== */
+h1, .hero-content h1 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+h2, h3 {
+    font-family: var(--font-title);
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 2rem;
+    letter-spacing: -0.5px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. BOUTONS EFFETS PREMIUM (Micro-interactions)
+   ========================================================================== */
+.btn-primary, .btn-secondary, .filter-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 30px; /* Style pilule plus luxueux */
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 122, 0, 0.25);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text-main);
+    border: 2px solid var(--color-text-main);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-text-main);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-whatsapp {
+    background-color: var(--color-whatsapp);
+    color: #fff;
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 16px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--color-whatsapp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+}
+
+/* ==========================================================================
+   5. EN-TÊTE FLOTTANTE (Effet Glassmorphism)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    -webkit-backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition); /* Transition fluide définie dans ton root */
+    background-color: transparent; /* Transparence par défaut */
+    width: 100%;
+}
+.main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95); /* Couleur au scroll */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 5%; /* Réduction légère de taille au scroll */
+}
+
+
+.logo {
+    height: 55px;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    position: relative;
+    padding: 5px 0;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--color-primary);
+}
+
+/* Animation de la ligne sous les liens au survol */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   6. SECTIONS & HERO DYNAMIQUE
+   ========================================================================== */
+section {
+    padding: 100px 8%;
+}
+
+.page-header {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5f7fa 100%);
+    text-align: center;
+    padding: 80px 5%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.page-header h1 {
+    font-size: 3.2rem;
+    color: var(--color-text-main);
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-section {
+    background:  url('../asset/img/realisation-hero.jpg') center/cover no-repeat;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4.2rem;
+    max-width: 900px;
+    margin: 0 auto 25px;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 45px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   7. SERVICES PRÉCIS (Effet de profondeur)
+   ========================================================================== */
+.services-section {
+    background-color: var(--color-bg-white);
+}
+
+.section-header p {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--color-bg-white);
+    padding: 50px 35px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow-card);
+}
+
+.service-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+    border-color: rgba(255, 122, 0, 0.15);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Bannière tarifaire au design asymétrique haut de gamme */
+.pricing-banner {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #ff9433 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: var(--border-radius);
+    margin-top: 60px;
+    box-shadow: 0 15px 35px rgba(255, 122, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Disques décoratifs en arrière-plan pour la texture */
+.pricing-banner::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.pricing-banner h3 {
+    color: #fff;
+    font-size: 2rem;
+    font-family: var(--font-main);
+    font-weight: 400;
+}
+
+.price {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 15px 0;
+    letter-spacing: -1px;
+}
+
+.pricing-banner p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+/* Section des tarifs */
+.pricing-section {
+    padding: 60px 20px;
+    background: #f9f9f9; /* Un gris très clair pour détacher la section */
+}
+
+.pricing-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre douce */
+    border: 1px solid #eee;
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--color-text-main);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff7900; /* Ta couleur orange */
+    margin: 10px 0;
+}
+
+.price .unit {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.price-detail {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   8. GALERIE PHOTO HAUTE COUTURE (Maçonnerie & Overlays)
+   ========================================================================== */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-muted);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 24px;
+    border-radius: 20px;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--color-text-main);
+    color: #fff;
+    border-color: var(--color-text-main);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    background-color: #f1f1f1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* Overlay au style "Luxury Exhibition" */
+.gallery-item figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 100%);
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+}
+
+.gallery-item figcaption h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item:hover figcaption h3 {
+    transform: translateY(0);
+}
+
+.gallery-item figcaption p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   9. CARD CONTACT & BLOC DE FORMULAIRE ÉLÉGANT
+   ========================================================================== */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    text-align: left;
+}
+
+.contact-info h2::after {
+    left: 0;
+    transform: none;
+}
+
+.contact-info > p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+}
+
+.info-list li {
+    margin-bottom: 35px;
+    font-size: 1.05rem;
+    position: relative;
+    padding-left: 10px;
+}
+
+.info-list strong {
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.info-list a {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.contact-form-container {
+    background-color: var(--color-bg-white);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.contact-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-text-main);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    background-color: #fafbfc;
+    transition: var(--transition);
+    color: var(--color-text-main);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.1);
+}
+/* ==========================================================================
+   10. PIED DE PAGE CORPORATE LUXE
+   ========================================================================== */
+.main-footer {
+    background-color: var(--color-bg-dark); /* Assure-toi d'avoir un fond sombre élégant */
+    color: rgba(255, 255, 255, 0.7);
+    padding: 80px 5% 20px;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    display: grid;
+    /* Crée des colonnes responsives automatiquement */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col h4 {
+    color: #fff;
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* La touche Luxe : Une petite ligne de séparation sous les titres */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-primary); /* Rappel de ton orange */
+}
+
+.footer-col p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.footer-tagline {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px !important;
+}
+
+.links-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links-col li {
+    margin-bottom: 12px;
+}
+
+.main-footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Micro-interaction : le lien glisse légèrement au survol */
+.main-footer a:hover {
+    color: var(--color-primary);
+    padding-left: 5px; 
+}
+
+/* Refonte du bloc Copyright */
+.footer-copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+
+.agency-signature a {
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Rendre le copyright centré sur mobile */
+@media (max-width: 768px) {
+    .footer-copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}
+
+/* ==========================================================================
+   HAMBURGER MENU (Responsive mobile)
+   ========================================================================== */
+.hamburger-menu {
+    display: none; /* Caché sur desktop */
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-main);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animation du hamburger quand il est actif */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ==========================================================================
+   11. RESPONSIVE DESIGN (Fluidité Mobile-First)
+   ========================================================================== */
+@media screen and (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        padding: 60px 6%;
+        margin-top: 80px;
+    }
+
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        padding: 15px 5%;
+    }
+    
+    /* ✅ AFFICHE le hamburger sur mobile */
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* ✅ La nav est cachée par défaut sur mobile */
+    .main-nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px;
+        display: none;  /* ← Caché par défaut */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        display: flex;  /* ← Affiché quand actif */
+        opacity: 1;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .pricing-banner .price {
+        font-size: 2.8rem;
+    }
+
+    .contact-form-container {
+        padding: 30px 20px;
+    }
+}
+
+/* ==========================================================================
+   12. LIGHTBOX INTERACTIVE (PREMIUM EFFECT)
+   ========================================================================== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.95); /* Fond sombre luxueux */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 80vh;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    color: var(--color-primary);
+    transform: rotate(90deg);
+}
+
+.lightbox-caption {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-family: var(--font-title);
+}

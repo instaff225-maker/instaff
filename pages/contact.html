@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================================================================
+       1. SEO TECHNIQUE & LOCALISATION (Ciblage "Devis Gratuit & Tarifs")
+       ========================================================================== -->
+    <title>Demander un Devis Gratuit | I.N: Staff Faux Plafond Abidjan</title>
+    <meta name="description" content="Demandez votre devis gratuit pour faux plafonds et décoration. I.N: Staff : tarifs transparents, intervention partout en Côte d'Ivoire.">
+    <meta name="keywords" content="devis staffeur abidjan, prix faux plafond m2 cote d'ivoire, tarif placo-plâtre marcory, contact entreprise staff boureima, renovateur interieur abidjan">
+    <meta name="author" content="Code A-Z">
+    <meta name="robots" content="index, follow">
+
+    <!-- ==========================================================================
+       2. PROTOCOLE OPEN GRAPH (Aperçu WhatsApp ultra-incitatif pour le contact)
+       ========================================================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.instaffdeco.com/pages/contact.html"> <!-- À adapter selon ton URL finale -->
+    <meta property="og:title" content="📈 Obtenez votre Devis Faux Plafond sous 24h | I.N: Staff">
+    <meta property="og:description" content="Envoyez vos dimensions et vos besoins via notre formulaire en ligne et basculez instantanément sur WhatsApp pour caler un rendez-vous.">
+    <meta property="og:image" content="../asset/img/og-preview.jpeg"> <!-- Une image orientée "professionnelle" ou un visuel de plan de chantier -->
+
+    <!-- ==========================================================================
+       3. PRECONNEXION & POLICES PREMIUM (Cohérence esthétique indispensable)
+       ========================================================================== -->
+    <preconnect href="https://fonts.googleapis.com">
+    <preconnect href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- ==========================================================================
+    4. FAVICONS & ICÔNES D'APPLICATION
+    ========================================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../asset/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../asset/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../asset/img/favicon/favicon.ico">
+    <link rel="manifest" href="../asset/img/favicon/site.webmanifest">
+
+    <!-- ==========================================================================
+       5. FEUILLES DE STYLE (CSS)
+       ========================================================================== -->
+    <!-- Ton chemin relatif d'origine vers style.css est conservé -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- FontAwesome pour les icônes (obligatoire ici pour les pictos téléphone, enveloppe, localisation du formulaire) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="canonical" href="https://www.instaffdeco.com/pages/contact.html">
+
+</head>
+<body>
+
+    <!-- EN-TÊTE ET NAVIGATION -->
+    <header class="main-header">
+        <div class="logo-container">
+            <a href="#">
+                <img src="../asset/img/logo-instaff.png" alt="Logo I.N: Staff" class="logo">
+            </a>
+        </div>
+
+        <!-- Bouton hamburger pour mobile -->
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu de navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="galerie.html"> Réalisations</a></li>
+                <li><a href="contact.html" class="active">Contact & Devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- EN-TÊTE DE LA PAGE CONTACT -->
+        <section class="page-header">
+            <div class="header-content">
+                <h1>Demandez votre Devis</h1>
+                <p>Prêt pour le splendide en plafond ? Discutons de votre projet de décoration intérieure.</p>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT & FORMULAIRE -->
+        <section class="contact-section">
+            <div class="contact-container">
+                
+                <!-- Informations de contact directes -->
+                <div class="contact-info">
+                    <h2>Nos Coordonnées</h2>
+                    <p>Nous sommes à la recherche de bons clients pour des collaborations basées sur la qualité et la satisfaction.</p>
+                    
+                    <ul class="info-list">
+                        <li>
+                            <strong><i class="fa-solid fa-map-pin fa_icon"></i> Adresse :</strong><br>
+                            Basés à Marcory Résidentiel.<br>
+                            Nous intervenons partout en Côte d'Ivoire.
+                        </li>
+                        <li>
+                            <strong><i class="fa-brands fa-whatsapp fa_icon"></i> WhatsApp :</strong><br>
+                            <a href="https://wa.me/2250769398708">+225 07 69 39 87 08</a>
+                        </li>
+                        <li>
+                            <strong><i class="fa-solid fa-dollar-sign fa_icon"></i> Tarification :</strong><br>
+                            À partir de 15 000 F CFA / m² (Fourrure et pose incluses)
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <!-- Formulaire redirigé vers WhatsApp via JS -->
+                <div class="contact-form-container">
+                    <h2>Envoyez-nous un message</h2>
+                    <!-- Ce formulaire n'a pas d'action classique PHP, il sera géré par ton main.js pour ouvrir WhatsApp -->
+                    <form id="whatsappForm" class="contact-form">
+                        
+                        <div class="form-group">
+                            <label for="nom">Votre Nom ou Entreprise *</label>
+                            <input type="text" id="nom" name="nom" required placeholder="Ex: Jean Kouassi">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tel">Votre Contact *</label>
+                            <input type="tel" id="tel" name="tel" required placeholder="Ex: 01 00 00 00 00">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Quel est votre besoin principal ?</label>
+                            <select id="service" name="service">
+                                <option value="Faux plafond en placo-plâtre">Faux plafond en placo-plâtre</option>
+                                <option value="Corniche ou rosace">Corniche ou rosace</option>
+                                <option value="Enduit et peinture">Enduit et peinture</option>
+                                <option value="Décoration murale complète">Décoration murale complète</option>
+                                <option value="Autre demande">Autre demande</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="surface">Surface estimée (en m²) - Optionnel</label>
+                            <input type="number" id="surface" name="surface" placeholder="Ex: 50">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Votre Message / Détails du projet *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet de décoration..."></textarea>
+                        </div>
+
+                        <!-- Bouton d'action avec touche marketing -->
+                        <button type="submit" class="btn-primary btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp "></i> Envoyer sur WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- Carte Google Maps -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4050949.819544277!2d-8.195369538081973!3d7.464621319534803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ef9261c7c60b%3A0xe124676a63b476fb!2sCode%20AZ!5e0!3m2!1sfr!2sga!4v1781665922181!5m2!1sfr!2sga" 
+                        width="100%" 
+                        height="350" 
+                        style="border:0; border-radius: 15px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+        </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Colonne 1 : Identité & Confiance -->
+            <div class="footer-col brand-col">
+                <h4>I.N: Staff Deco</h4>
+                <p class="footer-tagline">Votre spécialiste en pose de placo-plâtre et décoration intérieure depuis 2008.</p>
+                <p><i class="fa-solid fa-location-dot fa_icon"></i> Marcory Résidentiel, Abidjan</p>
+                <p><i class="fa-solid fa-truck-fast fa_icon"></i> Intervention partout en Côte d'Ivoire</p>
+            </div>
+
+            <!-- Colonne 2 : Liens Rapides -->
+            <div class="footer-col links-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="galerie.html">Nos Réalisations</a></li>
+                    <li><a href="contact.html">Demander un devis</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Contact & Action -->
+            <div class="footer-col contact-col">
+                <h4>Discutons de votre projet</h4>
+                <p>Prêt à transformer votre intérieur ?</p>
+                <!-- Bouton WhatsApp très visuel -->
+                <a href="https://wa.me/2250707502613" >
+                    <i class="fa-brands fa-whatsapp fa_icon"></i> +225 07 07 50 26 13
+                </a>
+                <br>
+                <a href="https://www.facebook.com/sympa133456?locale=fr_FR">
+                    <i class="fa-brands fa-facebook fa_icon"></i> Facebook
+                </a>
+            </div>
+        </div>
+
+        <!-- Signature & Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2026 I.N: Staff. Tous droits réservés.</p>
+            <p class="agency-signature" title="Besoin d'un site web pro pour votr business contactez l'agence Code A-Z"> Site créé par <a href="https://agnissanisaac.com" target="_blank" rel="noopener noreferrer">Code A-Z</a>, l'agence digitale de référence</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers ton fichier JavaScript -->
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

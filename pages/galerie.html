@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ==========================================================================
+       1. SEO TECHNIQUE & LOCALISATION (Ciblage "Modèles & Galerie Photos")
+       ========================================================================== -->
+    <title>Nos Réalisations | Faux Plafonds & Staff Déco Haut de Gamme Abidjan</title>
+    <meta name="description" content="Découvrez nos réalisations : faux plafonds modernes, corniches, finitions peinture. Portfolio de projets à Abidjan et Côte d'Ivoire.">
+    <meta name="keywords" content="photos faux plafond abidjan, modèles de staff cote d'ivoire, réalisations placo-plâtre, decoration salon abidjan, catalogue staffeur marcory">
+    <meta name="author" content="Code A-Z">
+    <meta name="robots" content="index, follow">
+
+    <!-- ==========================================================================
+       2. PROTOCOLE OPEN GRAPH (Aperçu WhatsApp personnalisé pour la galerie)
+       ========================================================================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.instaffdeco.com/pages/galerie.html"> <!-- À adapter selon ton URL réelle -->
+    <meta property="og:title" content="Découvrez Nos Plus Beaux Plafonds & Décors | I.N: Staff">
+    <meta property="og:description" content="Inspiration et élégance. Découvrez en images nos projets de faux plafonds et décoration intérieure à Abidjan.">
+    <meta property="og:image" content="../asset/img/og-galerie-preview.jpeg"> <!-- Une belle photo de salon moderne en 1200x630px -->
+
+    <!-- ==========================================================================
+       3. PRECONNEXION & POLICES PREMIUM (Même configuration pour la cohérence visuelle)
+       ========================================================================== -->
+    <preconnect href="https://fonts.googleapis.com">
+    <preconnect href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- ==========================================================================
+    4. FAVICONS & ICÔNES D'APPLICATION
+    ========================================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../asset/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../asset/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../asset/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/x-icon" href="../asset/img/favicon/favicon.ico">
+    <link rel="manifest" href="../asset/img/favicon/site.webmanifest">
+
+    <!-- ==========================================================================
+       5. FEUILLES DE STYLE (CSS)
+       ========================================================================== -->
+    <!-- Ton chemin relatif d'origine vers style.css est conservé -->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- FontAwesome pour les icônes (loupe, zoom au survol des images, flèches) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="canonical" href="https://www.instaffdeco.com/pages/galerie.html">
+
+</head>
+<body>
+
+    <!-- EN-TÊTE ET NAVIGATION -->
+    <header class="main-header">
+        <div class="logo-container">
+            <!-- Lien vers le logo avec ../ pour remonter au dossier asset -->
+            <a href="#">
+                <img src="../asset/img/logo-instaff.png" alt="Logo I.N: Staff" class="logo">
+            </a>
+        </div>
+
+        <!-- Bouton hamburger pour mobile -->
+        <button class="hamburger-menu" id="hamburgerBtn" aria-label="Menu de navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="galerie.html" class="active"> Réalisations</a></li>
+                <li><a href="contact.html">Contact & Devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- EN-TÊTE DE LA PAGE GALERIE -->
+        <section class="page-header">
+            <div class="header-content">
+                <h1>Nos Réalisations</h1>
+                <p>Découvrez nos propres chantiers, terminés ou en cours, et appréciez la qualité de notre travail et de nos bonnes finitions.</p>
+            </div>
+        </section>
+
+        <!-- SECTION GALERIE PORTFOLIO -->
+        <section class="gallery-section">
+            
+            <!-- (Optionnel) Des boutons pour filtrer les images par catégorie via JavaScript plus tard -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="plafond">Faux Plafonds</button>
+                <button class="filter-btn" data-filter="corniche">Corniches</button>
+                <button class="filter-btn" data-filter="peinture">Peinture & Déco</button>
+            </div>
+
+            <!-- La grille contenant les photos fournies par le client -->
+            <div class="gallery-grid">
+                
+                <!-- Élément de galerie 1 -->
+                <figure class="gallery-item" data-category="plafond">
+                    <img src="../asset/img/realisation-1.jpeg" alt="Faux plafond moderne en placo-plâtre" loading="lazy" width="400" height="300">
+                    <figcaption>
+                        <h3>Plafond Moderne</h3>
+                        <p>Pose de placo-plâtre</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Élément de galerie 2 -->
+                <figure class="gallery-item" data-category="corniche">
+                    <img src="../asset/img/realisation-2.jpeg" alt="Corniche en staff sur mesure" loading="lazy" width="400" height="300">
+                    <figcaption>
+                        <h3>Corniche Sur-Mesure</h3>
+                        <p>Décoration murale et staff</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Élément de galerie 3 -->
+                <figure class="gallery-item" data-category="peinture">
+                    <img src="../asset/img/realisation-3.jpeg" alt="Finition enduit et peinture" loading="lazy" width="400" height="300">
+                    <figcaption>
+                        <h3>Finition Parfaite</h3>
+                        <p>Enduit et peinture</p>
+                    </figcaption>
+                </figure>
+
+                <!-- Élément de galerie 4 -->
+                <figure class="gallery-item" data-category="plafond">
+                    <img src="../asset/img/realisation-4.jpeg" alt="Réalisation de plafond splendide" loading="lazy" width="400" height="300">
+                    <figcaption>
+                        <h3>Le Splendide en Plafond</h3>
+                        <p>Rendu final chez un particulier</p>
+                    </figcaption>
+                </figure>
+
+                <!-- copier-coller ce bloc <figure> autant de fois qu'il y'auras de photos -->
+
+            </div>
+            
+            <!-- Bouton d'appel à l'action pour les visiteurs convaincus -->
+            <div class="gallery-cta">
+                <p>Vous avez un projet similaire ?</p>
+                <a href="contact.html" class="btn-primary">Demander votre devis (15 000 F / m²)</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Colonne 1 : Identité & Confiance -->
+            <div class="footer-col brand-col">
+                <h4>I.N: Staff Deco</h4>
+                <p class="footer-tagline">Votre spécialiste en pose de placo-plâtre et décoration intérieure depuis 2008.</p>
+                <p><i class="fa-solid fa-location-dot fa_icon"></i> Marcory Résidentiel, Abidjan</p>
+                <p><i class="fa-solid fa-truck-fast fa_icon"></i> Intervention partout en Côte d'Ivoire</p>
+            </div>
+
+            <!-- Colonne 2 : Liens Rapides -->
+            <div class="footer-col links-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="galerie.html">Nos Réalisations</a></li>
+                    <li><a href="contact.html">Demander un devis</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Contact & Action -->
+            <div class="footer-col contact-col">
+                <h4>Discutons de votre projet</h4>
+                <p>Prêt à transformer votre intérieur ?</p>
+                <!-- Bouton WhatsApp très visuel -->
+                <a href="https://wa.me/2250707502613" >
+                    <i class="fa-brands fa-whatsapp fa_icon"></i> +225 07 07 50 26 13
+                </a>
+                <br>
+                <a href="https://www.facebook.com/sympa133456?locale=fr_FR">
+                    <i class="fa-brands fa-facebook fa_icon"></i> Facebook
+                </a>
+            </div>
+        </div>
+
+        <!-- Signature & Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2026 I.N: Staff. Tous droits réservés.</p>
+            <p class="agency-signature" title="Besoin d'un site web pro pour votr business contactez l'agence Code A-Z"> Site créé par <a href="https://agnissanisaac.com" target="_blank" rel="noopener noreferrer">Code A-Z</a>, l'agence digitale de référence</p>
+        </div>
+    </footer>
+
+    <!-- Lien vers ton fichier JavaScript (attention au ../) -->
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

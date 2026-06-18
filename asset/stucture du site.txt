@@ -1,0 +1,17 @@
+Instaff/
+│
+├── asset/
+│   ├── img/          (Toutes les photos des plafonds de M. Boureima)
+│   └── vid/          (Les vidéos de ses chantiers en cours)
+│
+├── pages/
+│   ├── galerie.html  (Ta page Galerie / Réalisations)
+│   └── contact.html  (Ta page Contact / Devis avec le bouton WhatsApp)
+│
+├── scripts/
+│   └── main.js       (Tes scripts pour l'animation ou la gestion du formulaire)
+│
+├── styles/
+│   └── style.css     (Ta charte graphique Gris, Blanc, touches d'Orange)
+│
+└── index.html        (Page d'accueil - À LA RACINE)
