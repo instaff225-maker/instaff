@@ -1,0 +1,14 @@
+# Extensions et outils locaux
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Fichiers système de design
+*.psd
+*.ai
+
+# Archives et livrables (Fiche technique exclusive)
+*.zip
+*.rar
+Fiche_Acces_Techniques_IN_Staff.pdf
+Fiche_Acces_Techniques_IN_Staff.html
