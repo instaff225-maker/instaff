@@ -1010,3 +1010,66 @@ input:focus, select:focus, textarea:focus {
     font-size: 1.1rem;
     font-family: var(--font-title);
 }
+
+/* ==========================================================================
+   13. AVIS CLIENTS (Preuve Sociale)
+   ========================================================================== */
+.testimonials-section {
+    padding: 80px 20px;
+    background: #f4f7f6; /* Une teinte très légèrement bleutée/grise pour changer du blanc */
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+    border: 1px solid #eee;
+    flex: 1;
+    min-width: 280px;
+    max-width: 360px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.stars {
+    color: #ff7900; /* Ton orange signature */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.client-info strong {
+    display: block;
+    color: var(--color-text-main, #222);
+    font-size: 1rem;
+}
+
+.client-info span {
+    font-size: 0.85rem;
+    color: #888;
+}
