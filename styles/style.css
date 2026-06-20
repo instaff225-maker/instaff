@@ -302,50 +302,96 @@ section {
 }
 
 /* ==========================================================================
-   7. SERVICES PRÉCIS (Effet de profondeur)
+   7. SERVICES PRÉCIS (Effet de profondeur et grand standing)
    ========================================================================== */
 .services-section {
-    background-color: var(--color-bg-white);
+    padding: 80px 20px;
+    background-color: var(--color-bg-white, #ffffff);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.section-header p {
+.section-header {
     text-align: center;
-    color: var(--color-text-muted);
-    font-size: 1.1rem;
-    margin-top: -10px;
     margin-bottom: 50px;
 }
 
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(--color-text-main, #222);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--color-text-muted, #666);
+    font-size: 1.1rem;
+}
+
+/* Grille adaptative */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
+/* Style de la carte */
 .service-card {
-    background: var(--color-bg-white);
-    padding: 50px 35px;
-    border-radius: var(--border-radius);
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.03);
-    box-shadow: var(--shadow-card);
+    background: var(--color-bg-white, #ffffff);
+    border-radius: var(--border-radius, 16px);
+    overflow: hidden; /* Requis pour masquer le zoom de l'image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-card, 0 10px 30px rgba(0, 0, 0, 0.03));
+    display: flex;
+    flex-direction: column;
 }
 
-.service-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-8px);
-    border-color: rgba(255, 122, 0, 0.15);
+/* Conteneur de l'image */
+.service-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+/* L'image elle-même */
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Empêche la déformation de l'image */
+    transition: transform 0.5s ease;
+}
+
+/* Conteneur du texte intérieur */
+.service-content {
+    padding: 30px 25px;
+    text-align: left; /* Plus élégant et lisible pour des paragraphes */
+    flex-grow: 1;
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--color-text-main, #222);
+    font-weight: 700;
 }
 
 .service-card p {
-    color: var(--color-text-muted);
+    color: var(--color-text-muted, #666);
     font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- EFFETS AU SURVOL (HOVER) --- */
+.service-card:hover {
+    box-shadow: var(--shadow-hover, 0 20px 40px rgba(0, 0, 0, 0.08));
+    transform: translateY(-8px);
+    border-color: rgba(255, 122, 0, 0.2); /* Légère touche orange signature */
+}
+
+/* L'effet magique : l'image zoom discrètement au survol de la carte */
+.service-card:hover .service-img {
+    transform: scale(1.08);
 }
 
 /* Bannière tarifaire au design asymétrique haut de gamme */
@@ -393,44 +439,110 @@ section {
 }
 /* Section des tarifs */
 .pricing-section {
-    padding: 60px 20px;
-    background: #f9f9f9; /* Un gris très clair pour détacher la section */
+    padding: 80px 20px;
+    background: #fdfdfd; 
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Aligne toutes les cartes à la même hauteur */
+    gap: 30px;
+    flex-wrap: wrap; /* Aligne horizontalement, passe à la ligne sur mobile */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Style de base des cartes */
 .pricing-card {
-    max-width: 600px;
-    margin: 0 auto;
+    flex: 1;
+    min-width: 300px;
+    max-width: 360px;
     background: white;
-    padding: 40px;
-    border-radius: 15px;
+    padding: 40px 30px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Ombre douce */
-    border: 1px solid #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Aligne le bouton toujours en bas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet de survol interactif */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .pricing-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--color-text-main);
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--color-text-main, #222);
 }
 
+/* Style du prix */
 .price {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ff7900; /* Ta couleur orange */
-    margin: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ff7900; /* Ton orange signature */
+    margin: 10px 0 5px 0;
 }
 
 .price .unit {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #888;
+    font-weight: 400;
 }
 
 .price-detail {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 25px;
 }
+
+/* Liste des avantages */
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    text-align: left;
+}
+
+.price-features li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* --- OPTIMISATION MARKETING : LA CARTE VEDETTE --- */
+.pricing-card.featured {
+    border: 2px solid #ff7900;
+    box-shadow: 0 15px 35px rgba(255, 121, 0, 0.1);
+    transform: scale(1.03); /* Légèrement plus grande pour dominer visuellement */
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.03) translateY(-10px);
+}
+
+/* Le Badge "Le plus choisi" */
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff7900;
+    color: white;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(255, 121, 0, 0.3);
+}
+
+
 
 /* ==========================================================================
    8. GALERIE PHOTO HAUTE COUTURE (Maçonnerie & Overlays)
